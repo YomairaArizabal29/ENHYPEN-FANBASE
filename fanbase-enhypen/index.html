@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Fanbase ENHYPEN</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 700px;
+      border-radius: 10px;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .ficha-expediente {
+      background: url('imagenes/fondo-expediente.png') no-repeat center center;
+      background-size: cover;
+      padding: 20px;
+      border: 2px solid #222;
+      border-radius: 10px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      max-width: 700px;
+      margin: auto;
+      font-family: 'Courier New', monospace;
+      color: #111;
+    }
+
+    .foto-integrante {
+      width: 150px;
+      height: auto;
+      border: 2px solid #000;
+    }
+
+    .datos-integrante h2 {
+      margin-top: 0;
+      color: #b00;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="imagenes/logo-enhypen.jpg" alt="logo-enhypen" style="width: 90%; max-width: 900px;">
+    <h1>Bienvenid@s a la Fanbase de ENHYPEN</h1>
+  </header>
+
+  <nav>
+    <button onclick="mostrarSeccion('integrantes')">Conoce a los Integrantes</button>
+    <button onclick="mostrarSeccion('playlist')">Playlists</button>
+    <button onclick="mostrarSeccion('noticias')">Noticias</button>
+  </nav>
+
+  <main>
+    <!-- CONTENEDOR PARA EL MODAL -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="cerrarModal()">&times;</span>
+        <div id="contenido-biografia"></div>
+      </div>
+    </div>
+
+    <section id="integrantes" class="seccion">
+      <h2>Integrantes de ENHYPEN</h2>
+      <div class="lista-integrantes">
+        <button onclick="mostrarBiografia('heeseung')">Heeseung</button>
+        <button onclick="mostrarBiografia('jay')">Jay</button>
+        <button onclick="mostrarBiografia('jake')">Jake</button>
+        <button onclick="mostrarBiografia('sunghoon')">Sunghoon</button>
+        <button onclick="mostrarBiografia('sunoo')">Sunoo</button>
+        <button onclick="mostrarBiografia('jungwon')">Jungwon</button>
+        <button onclick="mostrarBiografia('niki')">Ni-ki</button>
+      </div>
+    </section>
+
+    <section id="playlist" class="seccion">
+      <h2>Playlist ENHYPEN 🎧</h2>
+      <h3>Spotify</h3>
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/5t5FqBwTcgKTaWmfEbwQY9?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+      <h3>YouTube</h3>
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/videoseries?list=PLzUBVJkZt6KFd9ltRCR_9eJrLxVgIbEr_" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </section>
+
+    <section id="noticias" class="seccion">
+      <h2>Últimas Noticias de ENHYPEN</h2>
+      <p>📢 Nuevo álbum anunciado para agosto 2025.</p>
+      <p>🎤 Gira mundial confirmada: ¡pronto en LATAM!</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
